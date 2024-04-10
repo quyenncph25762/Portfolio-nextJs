@@ -67,7 +67,7 @@ export const deleteCategory = async (req, res) => {
         const category = await Category.findByIdAndDelete(req.params.id)
 
         if (undefinedCategory) {
-            await Product.updateMany(
+            await Project.updateMany(
                 { categoryId },
                 { categoryId: undefinedCategory._id }
             );
